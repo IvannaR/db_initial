@@ -1,9 +1,7 @@
 package com.example.myTestDatabase.model;
-import javax.persistence.Id;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Table;
+import org.hibernate.validator.constraints.UniqueElements;
+
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 @Entity
@@ -15,9 +13,11 @@ public class User {
     private long id;
 
     @NotNull
+    @Column(unique=true)
     private String email;
 
     @NotNull
+    @Column
     private String name;
 
     public User() { }
